@@ -1,0 +1,20 @@
+<div
+  cdkDropList
+  #todoList="cdkDropList"
+  [cdkDropListData]="taskList"
+  [cdkDropListConnectedTo]="[]"
+  class="matrix-list"
+  (cdkDropListDropped)="drop($event)">
+  <div class="header" [ngStyle]="{ 'color': themeColor }"> 
+    <div><mat-icon>stars</mat-icon>{{taskListHeader}}</div>
+    <button mat-icon-button color="primary" (click)="openDialog()"><mat-icon>add</mat-icon></button>
+  </div>
+
+  <div cdkDrag class="matrix-box" *ngFor="let task of taskList; let i = index">
+    <mat-checkbox [(ngModel)]="task.done">{{task.title}}</mat-checkbox>
+    <div class="box">
+      <button mat-icon-button color="primary" (click)="openDialog(i)"><mat-icon>edit</mat-icon></button>
+      <button mat-icon-button color="warn" (click)="deleteTask(i)"><mat-icon>delete</mat-icon></button>
+    </div>
+  </div>
+</div>
