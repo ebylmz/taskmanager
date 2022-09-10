@@ -12,7 +12,7 @@
 
   <div cdkDrag class="matrix-box" *ngFor="let task of taskList; let i = index">
     <mat-checkbox [(ngModel)]="task.done">{{task.title}}</mat-checkbox>
-    <div class="box">
+    <div>
       <button mat-icon-button color="primary" (click)="openDialog(i)"><mat-icon>edit</mat-icon></button>
       <button mat-icon-button color="warn" (click)="deleteTask(i)"><mat-icon>delete</mat-icon></button>
     </div>

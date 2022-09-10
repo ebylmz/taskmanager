@@ -1,21 +1,9 @@
 <div class="container-fluid">
-  <h1 class="box" class="main-header">Eisenhower Matrix</h1>
-  <div class="box" cdkDropListGroup>
-    <div class="row">
-      <div class="col">
-        <app-task-view [taskList]="urgentImportant" [taskListHeader]="'Urgent & Important'" [themeColor]="'red'"></app-task-view>
-      </div>
-      <div class="col">
-        <app-task-view [taskList]="notUrgentImportant" [taskListHeader]="'Not Urgent & Important'" [themeColor]="'orange'"></app-task-view>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <app-task-view [taskList]="urgentUnimportant" [taskListHeader]="'Urgent & Unimportant'" [themeColor]="'blue'"></app-task-view>
-      </div>
-      <div class="col">
-        <app-task-view [taskList]="notUrgentUnimportant" [taskListHeader]="'Not Urgent & Unimportant'" [themeColor]="'green'"></app-task-view>
-      </div>
-    </div>
+  <h1 class="main-header">Eisenhower Matrix</h1>
+  <div class="grid-container" cdkDropListGroup>
+    <app-task-view class="grid-item" [taskList]="urgentImportant" [taskListHeader]="'Urgent & Important'" [themeColor]="'red'"></app-task-view>
+    <app-task-view class="grid-item" [taskList]="notUrgentImportant" [taskListHeader]="'Not Urgent & Important'" [themeColor]="'orange'"></app-task-view>
+    <app-task-view class="grid-item" [taskList]="urgentUnimportant" [taskListHeader]="'Urgent & Unimportant'" [themeColor]="'blue'"></app-task-view>
+    <app-task-view class="grid-item" [taskList]="notUrgentUnimportant" [taskListHeader]="'Not Urgent & Unimportant'" [themeColor]="'green'"></app-task-view>
   </div>
 </div>

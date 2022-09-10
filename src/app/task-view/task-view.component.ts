@@ -1,4 +1,5 @@
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { NoopScrollStrategy } from '@angular/cdk/overlay';
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddEditTaskDialogComponent } from '../add-edit-task-dialog/add-edit-task-dialog.component';
@@ -53,7 +54,8 @@ export class TaskViewComponent implements OnInit {
     const dialogRef = this.dialog.open(AddEditTaskDialogComponent, {
       width: '500px', // TODO: set proper value
       // data: {title: "", description: "",  false},
-      data: task
+      data: task,
+      scrollStrategy: new NoopScrollStrategy()
     });
 
     dialogRef.afterClosed().subscribe(result => {
