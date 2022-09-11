@@ -1,0 +1,32 @@
+<mat-toolbar>
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon mat-list-icon>chevron_right</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" fixedInViewport>
+    <mat-nav-list>
+      <mat-list-item>
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon mat-list-icon>chevron_left</mat-icon>
+        </button>
+      </mat-list-item>
+      <mat-list-item routerLink=".">
+        <mat-icon color="primary">account_circle</mat-icon>
+      </mat-list-item>
+      <mat-list-item routerLink=".">
+        <mat-icon color="primary">settings</mat-icon>
+      </mat-list-item>
+      <mat-list-item routerLink="list-matrix-view">
+        <mat-icon color="primary">dashboard</mat-icon>
+      </mat-list-item>
+      <mat-list-item routerLink=".">
+        <mat-icon color="primary">list</mat-icon>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

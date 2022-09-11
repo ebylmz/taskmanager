@@ -17,13 +17,18 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AddEditTaskDialogComponent } from './add-edit-task-dialog/add-edit-task-dialog.component';
 import { MatrixViewComponent } from './matrix-view/matrix-view.component';
+import { MainComponent } from './main/main.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskViewComponent,
     AddEditTaskDialogComponent,
-    MatrixViewComponent
+    MatrixViewComponent,
+    MainComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,10 @@ import { MatrixViewComponent } from './matrix-view/matrix-view.component';
     MatButtonModule,
     DragDropModule,
     MatCheckboxModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSidenavModule,
+    MatListModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
