@@ -8,31 +8,26 @@
 
 .matrix-list {
   border: solid 1px #ccc;
-  padding: 0.5rem;
+  padding: 1rem;
   height: 100%;
   background: white;
   border-radius: 4px;
   overflow: auto;
+
+  .list-header {
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;  
+    justify-content: space-between;
+
+    .header-icon {
+      padding-right : 2rem;
+    }
+  }
 }
 
-.matrix-box {
-  padding: 0.2rem;
-  border-bottom: solid 1px #ccc;
-  color: rgba(0, 0, 0, 0.87);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  // cursor: move;
-  font-size: 14px;
-}
-
-.header {
-  font-size: 1rem;
-  font-weight: 500;
-  display: flex;  
-  justify-content: space-between;
+.matrix-list.cdk-drop-list-dragging .matrix-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
 
 .cdk-drag-preview {
@@ -51,10 +46,20 @@
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
 
-.matrix-box:last-child {
-  border: none;
+.matrix-box {
+  padding: 0.4rem;
+  // background-color: #FAFAFA;
+  border-bottom: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  // cursor: move;
+  font-size: 14px;
 }
 
-.matrix-list.cdk-drop-list-dragging .matrix-box:not(.cdk-drag-placeholder) {
-  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+.matrix-box:last-child {
+  border: none;
 }

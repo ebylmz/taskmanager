@@ -5,8 +5,8 @@
   [cdkDropListConnectedTo]="[]"
   class="matrix-list"
   (cdkDropListDropped)="drop($event)">
-  <div class="header" [ngStyle]="{ 'color': themeColor }"> 
-    <div><mat-icon>stars</mat-icon>{{taskListHeader}}</div>
+  <div class="list-header" [ngStyle]="{ 'color': themeColor }"> 
+    <div><mat-icon class="header-icon">offline_bolt</mat-icon>{{listHeader}}</div>
     <button mat-icon-button color="primary" (click)="openDialog()"><mat-icon>add</mat-icon></button>
   </div>
 

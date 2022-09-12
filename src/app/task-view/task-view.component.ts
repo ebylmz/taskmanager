@@ -3,7 +3,8 @@ import { NoopScrollStrategy } from '@angular/cdk/overlay';
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddEditTaskDialogComponent } from '../add-edit-task-dialog/add-edit-task-dialog.component';
-import { MyTask } from '../model/myTask.model';
+import { MatrixListProperties } from '../model/matrixListProperties.model';
+import { EisenhowerPriority, MyTask } from '../model/myTask.model';
 
 @Component({
   selector: 'app-task-view',
@@ -12,13 +13,18 @@ import { MyTask } from '../model/myTask.model';
 })
 export class TaskViewComponent implements OnInit {
 
-  @Input() taskList: MyTask[] = [];
-  @Input() themeColor !: string;
-  @Input() taskListHeader !: string;
+  @Input() listType !: EisenhowerPriority;
+  @Input() taskList !: MyTask[];
+  themeColor !: string;
+  listHeader !: string;
 
   constructor(public dialog: MatDialog) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    let properties: MatrixListProperties = new MatrixListProperties(this.listType);
+    this.themeColor = properties.themeColor;
+    this.listHeader = properties.listHeader;
+  }
 
   addTask(task: MyTask): void {
     this.taskList.push(task);
@@ -48,7 +54,7 @@ export class TaskViewComponent implements OnInit {
   openDialog(taskNo ?: number): void {
     let task: MyTask;
     if (taskNo == undefined)
-      task = new MyTask("", "", false);
+      task = new MyTask("", "");
     else 
       task = this.taskList[taskNo];
     const dialogRef = this.dialog.open(AddEditTaskDialogComponent, {

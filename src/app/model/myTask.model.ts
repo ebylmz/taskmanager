@@ -1,18 +1,19 @@
 export enum EisenhowerPriority {
-  URGENT_IMPORTANT = "Urgent & Important",
-  URGENT_UNIMPORTANT = "Urgent & Unimportant",
-  NOT_URGENT_IMPORTANT = "Not Urgent & Important",
-  NOT_URGENT_UNIMPORTANT = "Not Urgent & Unimportant"
+  NOT_URGENT_UNIMPORTANT = 0,
+  NOT_URGENT_IMPORTANT = 1,
+  URGENT_UNIMPORTANT = 2,
+  URGENT_IMPORTANT = 3
 }
 
 export class MyTask {
-  title !: string;
-  description !: string;
+  title: string;
+  description: string;
+  date: Date = new Date();
+  priority: EisenhowerPriority = EisenhowerPriority.URGENT_IMPORTANT;
   done: boolean = false;
 
-  constructor(title: string, description: string, done: boolean) {
+  constructor(title: string, description: string) {
     this.title = title;
     this.description = description;
-    this.done = done;
   }
 }

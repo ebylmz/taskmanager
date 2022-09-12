@@ -1,9 +1,9 @@
 <div class="container-fluid">
   <h1 class="main-header">Eisenhower Matrix</h1>
   <div class="grid-container" cdkDropListGroup>
-    <app-task-view class="grid-item" [taskList]="urgentImportant" [taskListHeader]="'Urgent & Important'" [themeColor]="'red'"></app-task-view>
-    <app-task-view class="grid-item" [taskList]="notUrgentImportant" [taskListHeader]="'Not Urgent & Important'" [themeColor]="'orange'"></app-task-view>
-    <app-task-view class="grid-item" [taskList]="urgentUnimportant" [taskListHeader]="'Urgent & Unimportant'" [themeColor]="'blue'"></app-task-view>
-    <app-task-view class="grid-item" [taskList]="notUrgentUnimportant" [taskListHeader]="'Not Urgent & Unimportant'" [themeColor]="'green'"></app-task-view>
+    <app-task-view class="grid-item" [taskList]="urgentImportant" [listType]="3"></app-task-view>
+    <app-task-view class="grid-item" [taskList]="notUrgentImportant" [listType]="2"></app-task-view>
+    <app-task-view class="grid-item" [taskList]="urgentUnimportant" [listType]="1"></app-task-view>
+    <app-task-view class="grid-item" [taskList]="notUrgentUnimportant" [listType]="0"></app-task-view>
   </div>
 </div>
