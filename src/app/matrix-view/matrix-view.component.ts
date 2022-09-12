@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../core/services/api.service';
 import { MyTask } from '../model/myTask.model';
 
 @Component({
@@ -13,7 +14,15 @@ export class MatrixViewComponent implements OnInit {
   notUrgentImportant: MyTask[] = [];
   notUrgentUnimportant: MyTask[] = [];
 
-  constructor() {}
+  constructor(private apiService: ApiService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    MyTask.filterTasks(
+      this.apiService.getTasks(), 
+      this.urgentImportant, 
+      this.urgentUnimportant, 
+      this.notUrgentImportant, 
+      this.notUrgentUnimportant
+    );
+  }
 }

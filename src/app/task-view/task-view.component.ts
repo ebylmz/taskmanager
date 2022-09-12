@@ -54,7 +54,7 @@ export class TaskViewComponent implements OnInit {
   openDialog(taskNo ?: number): void {
     let task: MyTask;
     if (taskNo == undefined)
-      task = new MyTask("", "");
+      task = new MyTask("", "", EisenhowerPriority.URGENT_IMPORTANT);
     else 
       task = this.taskList[taskNo];
     const dialogRef = this.dialog.open(AddEditTaskDialogComponent, {
