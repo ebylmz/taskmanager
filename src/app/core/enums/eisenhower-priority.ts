@@ -1,0 +1,6 @@
+export enum EisenhowerPriority {
+  NOT_URGENT_UNIMPORTANT = 0,
+  NOT_URGENT_IMPORTANT = 1,
+  URGENT_UNIMPORTANT = 2,
+  URGENT_IMPORTANT = 3,
+}

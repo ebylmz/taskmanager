@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { EisenhowerPriority, MyTask } from 'src/app/model/myTask.model';
+import { MyTask } from 'src/app/core/models/my-task';
+import { EisenhowerPriority } from '../enums/eisenhower-priority';
 
 @Injectable({
   providedIn: 'root'
@@ -10,24 +11,24 @@ export class ApiService {
 
   getTasks(): MyTask[] {
     return Array.of(
-      new MyTask("Have a solid workout", "", EisenhowerPriority.NOT_URGENT_IMPORTANT),
-      new MyTask("Create the list-view", "", EisenhowerPriority.NOT_URGENT_IMPORTANT),
-      new MyTask("Create the API of TaskManager App", "", EisenhowerPriority.URGENT_IMPORTANT),
-      new MyTask("Take a walk", "", EisenhowerPriority.NOT_URGENT_IMPORTANT),
-      new MyTask("Go to grocery", "", EisenhowerPriority.NOT_URGENT_UNIMPORTANT),
-      new MyTask("Sell the shares", "", EisenhowerPriority.URGENT_IMPORTANT),
-      new MyTask("Send mail to MAVI", "", EisenhowerPriority.URGENT_UNIMPORTANT),
-      new MyTask("Apply angular folder structure to TaskManager App", "", EisenhowerPriority.NOT_URGENT_IMPORTANT),
-      new MyTask("Practice meditation", "", EisenhowerPriority.NOT_URGENT_IMPORTANT),
-      new MyTask("Cook ground beef", "", EisenhowerPriority.URGENT_IMPORTANT),
-      new MyTask("Eat yoghurt before sleep", "", EisenhowerPriority.NOT_URGENT_IMPORTANT),
-      new MyTask("Have a jump workout", "", EisenhowerPriority.URGENT_IMPORTANT),
-      new MyTask("Call momy", "", EisenhowerPriority.NOT_URGENT_IMPORTANT),
-      new MyTask("Check the google search algorithm", "", EisenhowerPriority.NOT_URGENT_UNIMPORTANT),
-      new MyTask("Learn to journaling", "", EisenhowerPriority.NOT_URGENT_IMPORTANT),
-      new MyTask("Make research about museums in Instanbul", "", EisenhowerPriority.NOT_URGENT_UNIMPORTANT),
-      new MyTask("Update the CV", "", EisenhowerPriority.NOT_URGENT_IMPORTANT),
-      new MyTask("Watch Forest Gump", "", EisenhowerPriority.NOT_URGENT_UNIMPORTANT),
+      {title: "Have a solid workout", priority: EisenhowerPriority.NOT_URGENT_IMPORTANT, description: "", date: undefined, done: false},
+      {title: "Create the list-view", priority: EisenhowerPriority.NOT_URGENT_IMPORTANT, description: "", date: undefined, done: false},
+      {title: "Create the API of TaskManager App", priority: EisenhowerPriority.URGENT_IMPORTANT, description: "", date: undefined, done: false},
+      {title: "Take a walk", priority: EisenhowerPriority.NOT_URGENT_IMPORTANT, description: "", date: undefined, done: false},
+      {title: "Go to grocery", priority: EisenhowerPriority.NOT_URGENT_UNIMPORTANT, description: "", date: undefined, done: false},
+      {title: "Sell the shares", priority: EisenhowerPriority.URGENT_IMPORTANT, description: "", date: undefined, done: false},
+      {title: "Send mail to MAVI", priority: EisenhowerPriority.URGENT_UNIMPORTANT, description: "", date: undefined, done: false},
+      {title: "Apply angular folder structure to TaskManager App", priority: EisenhowerPriority.NOT_URGENT_IMPORTANT, description: "", date: undefined, done: false},
+      {title: "Practice meditation", priority: EisenhowerPriority.NOT_URGENT_IMPORTANT, description: "", date: undefined, done: false},
+      {title: "Cook ground beef", priority: EisenhowerPriority.URGENT_IMPORTANT, description: "", date: undefined, done: false},
+      {title: "Eat yoghurt before sleep", priority: EisenhowerPriority.NOT_URGENT_IMPORTANT, description: "", date: undefined, done: false},
+      {title: "Have a jump workout", priority: EisenhowerPriority.URGENT_IMPORTANT, description: "", date: undefined, done: false},
+      {title: "Call momy", priority: EisenhowerPriority.NOT_URGENT_IMPORTANT, description: "", date: undefined, done: false},
+      {title: "Check the google search algorithm", priority: EisenhowerPriority.NOT_URGENT_UNIMPORTANT, description: "", date: undefined, done: false},
+      {title: "Learn to journaling", priority: EisenhowerPriority.NOT_URGENT_IMPORTANT, description: "", date: undefined, done: false},
+      {title: "Make research about museums in Istanbul", priority: EisenhowerPriority.NOT_URGENT_UNIMPORTANT, description: "", date: undefined, done: false},
+      {title: "Update the CV", priority: EisenhowerPriority.NOT_URGENT_IMPORTANT, description: "", date: undefined, done: false},
+      {title: "Watch Forest Gump", priority: EisenhowerPriority.NOT_URGENT_UNIMPORTANT, description: "", date: undefined, done: false},
     );
   }
 }

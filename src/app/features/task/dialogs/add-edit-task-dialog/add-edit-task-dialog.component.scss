@@ -1,0 +1,21 @@
+.dialog-container {
+  min-width: 500px;
+  max-width: 700px;
+}
+
+.dialog-title-icon {
+  margin-right: 0.4rem;
+}
+
+form {
+  display: grid;
+  grid-column: auto;
+}
+
+.mat-form-field {
+  margin-bottom: 1rem;
+}
+
+.mat-dialog-title {
+  padding-bottom: 2rem;
+}

@@ -1,0 +1,61 @@
+<div
+  class="list-container"
+  cdkDropList
+  #todoList="cdkDropList"
+  [cdkDropListData]="taskList"
+  [cdkDropListConnectedTo]="[]"
+  (cdkDropListDropped)="drop($event)">
+
+  <div *ngIf="matrixView; else inboxView" class="list-header-section" [ngStyle]="{ 'color': listProperty.themeColor }"> 
+    <div>
+      <mat-icon class="header-icon">offline_bolt</mat-icon>
+      <span>{{listProperty.listHeader}}</span>
+    </div>
+    <button mat-icon-button color="primary" (click)="openAddTaskDialog()"><mat-icon>add</mat-icon></button>
+  </div>
+  
+  <ng-template #inboxView>
+    <div class="list-header-section">
+      <h1>{{listHeader}}</h1>
+      <button mat-icon-button color="primary" (click)="openAddTaskDialog()"><mat-icon>add</mat-icon></button>
+    </div> 
+  </ng-template>
+
+  <div cdkDrag class="task-box" *ngFor="let task of taskList; let i = index">
+    <mat-checkbox color="primary" (click)="completeTask(i)"></mat-checkbox>
+    <div 
+      class="task-title" 
+      (contextmenu)="openContextMenu($event, i)" 
+      (click)="openAddTaskDialog(i)">
+
+      {{task.title}}
+    </div>
+    <mat-icon *ngIf="!matrixView" [ngStyle]="{'color': themes.get(task.priority) }" class="header-icon">offline_bolt</mat-icon>
+    <!--
+    <div>
+      <button mat-icon-button color="primary" (click)="openDialog(i)"><mat-icon>edit</mat-icon></button>
+      <button mat-icon-button color="warn" (click)="deleteTask(i)"><mat-icon>delete</mat-icon></button>
+    </div>
+    -->
+  </div>
+</div>
+
+<div 
+  style="visibility: hidden; position: fixed;" 
+  [style.left]="menuTopLeftPosition.x" 
+  [style.top]="menuTopLeftPosition.y" 
+  [matMenuTriggerFor]="rightMenu">
+
+  <mat-menu #rightMenu="matMenu"> 
+    <ng-template matMenuContent let-taskIndex="taskIndex">
+      <button mat-menu-item (click)="openAddTaskDialog(taskIndex)">
+        <mat-icon color="primary">edit</mat-icon>
+        <span>Edit</span>
+      </button>
+      <button mat-menu-item (click)="openDeleteTaskDialog(taskIndex)">
+        <mat-icon color="warn">delete</mat-icon>
+        <span>Delete</span>
+      </button>
+    </ng-template>
+  </mat-menu>
+</div>

@@ -1,0 +1,44 @@
+<div class="dialog-container">
+  <h1 mat-dialog-title>
+    <mat-icon class="dialog-title-icon" color="primary">task</mat-icon>
+    <span>{{task.title == "" ? 'New Task' : task.title}}</span> 
+  </h1>
+  <mat-dialog-content>
+    <form [formGroup]="form">
+      <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title" placeholder="What needs doing?">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <input matInput formControlName="description" placeholder="What about the details?">
+      </mat-form-field>
+      
+      <mat-form-field appearance="outline">
+        <mat-label>Due Date</mat-label>
+        <input matInput formControlName="date" [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Priority</mat-label>
+        <mat-select formControlName="priority">
+          <mat-select-trigger>
+            <mat-icon [ngStyle]="{color: getListProperty(form.get('priority')?.value).themeColor}">offline_bolt</mat-icon>
+          </mat-select-trigger>
+
+          <mat-option *ngFor="let type of priorityList" [value]="type.urgency">
+            <mat-icon [ngStyle]="{color: type.themeColor}">offline_bolt</mat-icon>
+             {{type.priority}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button [disabled]="form.invalid || form.pristine" [mat-dialog-close]="form">Ok</button>
+    <button mat-button color="warn" (click)="onNoClick()" [mat-dialog-close]="undefined">Cancel</button>
+  </mat-dialog-actions>
+</div>

@@ -1,21 +1,13 @@
-export enum EisenhowerPriority {
-  NOT_URGENT_UNIMPORTANT = 0,
-  NOT_URGENT_IMPORTANT = 1,
-  URGENT_UNIMPORTANT = 2,
-  URGENT_IMPORTANT = 3
-}
+import { EisenhowerPriority } from "../enums/eisenhower-priority";
 
 export class MyTask {
-  title: string;
-  description: string;
-  priority: EisenhowerPriority;
-  date: Date = new Date();
+  title: string = "";
+  description: string = "";
+  priority !: EisenhowerPriority;
+  date: Date | undefined;
   done: boolean = false;
 
-  constructor(title: string, description: string, priority: EisenhowerPriority) {
-    this.title = title;
-    this.description = description;
-    this.priority = priority;
+  constructor() {
   }
 
   public static filterTasks(
