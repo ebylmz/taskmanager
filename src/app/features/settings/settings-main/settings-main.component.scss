@@ -1,0 +1,27 @@
+.menu-container {
+  width: 60%;
+  min-width: 800px;
+  margin: auto;
+}
+
+.container-header {
+  font-weight: 500;
+}
+
+mat-drawer-container {
+  width: 100%;
+}
+
+mat-drawer-content {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+}
+
+.drawer-content-container {
+  width: 100%;
+}
+
+.title-icon {
+  margin-right: 1rem;
+}

@@ -1,29 +1,8 @@
-mat-toolbar {
-  background-color: #FAFAFA;
+mat-sidenav-content {
+  margin-top: 3vh;
+  height: 97vh;
 }
 
-mat-sidenav-container {
-  height: 90%;
-  mat-sidenav {
-    background-color: #F1F4FF;
-
-    mat-nav-list {
-      .menu-item {
-        margin-left: 8px;
-      }
-
-      .chevron-button {
-        transition: 300ms ease-in-out;
-        transform: rotate(0deg);
-      }
-
-      .chevron-button.rotated {
-        transform: rotate(180deg);
-      }
-    }
-  }
-}
-
-.toolbar-header {
-  margin-left: 1rem;
+mat-list-item {
+  text-align: center;
 }

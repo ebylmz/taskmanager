@@ -2,7 +2,7 @@
   border: solid 1px #ccc;
   padding: 1rem;
   height: 100%;
-  background: white;
+  // background: white;
   border-radius: 4px;
   overflow: auto;
 
@@ -17,7 +17,7 @@
     }
 
     .header-icon {
-      padding-right : 2rem;
+      margin-right : 0.4rem;
     }
   }
 }
@@ -44,17 +44,15 @@
 
 .task-box {
   padding: 0.4rem;
-  // background-color: #FAFAFA;
   border-bottom: solid 1px #ccc;
-  color: rgba(0, 0, 0, 0.87);
   display: flex;
-  // flex-direction: row;
-  // align-items: center;
   box-sizing: border-box;
-  // cursor: move;
   font-size: 14px;
 
   .task-title {
+    padding-right: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
     padding-left: 1rem;
     flex-basis: 100%;
     cursor: default;

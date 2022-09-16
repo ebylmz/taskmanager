@@ -1,0 +1,26 @@
+<div class="menu-container">
+  <h1 class="container-header">Settings</h1>
+  <mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened fixedViewports>
+      <mat-nav-list>
+        <mat-list-item routerLink="account">
+          <mat-icon class="title-icon">admin_panel_settings</mat-icon>Account and Security
+        </mat-list-item>
+        <mat-list-item routerLink="theme">
+          <mat-icon class="title-icon">palette</mat-icon>Theme 
+        </mat-list-item>
+        <mat-list-item routerLink="language">
+          <mat-icon class="title-icon">language</mat-icon>Language
+        </mat-list-item>
+        <mat-list-item routerLink="about">
+          <mat-icon class="title-icon">info</mat-icon>About
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+      <mat-card class="drawer-content-container">
+        <router-outlet></router-outlet>
+      </mat-card>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>

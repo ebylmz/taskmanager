@@ -30,6 +30,16 @@ import { DeleteTaskDialogComponent } from './features/task/dialogs/delete-task-d
 import { MatMenuModule } from '@angular/material/menu';
 import { NoopScrollStrategy } from '@angular/cdk/overlay';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { SettingsMainComponent } from './features/settings/settings-main/settings-main.component';
+import { ThemeSettingsComponent } from './features/settings/theme-settings/theme-settings.component';
+import { AccountSettingsComponent } from './features/settings/account-settings/account-settings.component';
+import { AboutComponent } from './features/settings/about/about.component';
+import { MatRadioModule } from '@angular/material/radio';
+import { LanguageSettingsComponent } from './features/settings/language-settings/language-settings.component';
+import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +50,12 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MainComponent,
     InboxViewComponent,
     DeleteTaskDialogComponent,
+    SettingsMainComponent,
+    ThemeSettingsComponent,
+    LanguageSettingsComponent,
+    AccountSettingsComponent,
+    AboutComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -63,11 +79,15 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatSelectModule,
     MatSnackBarModule,
     MatMenuModule,
-    MatGridListModule
+    MatGridListModule,
+    MatTooltipModule,
+    MatDividerModule,
+    MatSlideToggleModule,
+    MatRadioModule
   ],
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}},
-    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {autoFocus: false, restoreFocus: false, scrollStrategy: new NoopScrollStrategy()}}
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {autoFocus: false, restoreFocus: false, scrollStrategy: new NoopScrollStrategy()}},
   ],
   bootstrap: [AppComponent]
 })

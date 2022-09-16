@@ -11,7 +11,7 @@ export class PriorityListProperties {
     switch(urgency) {
       case EisenhowerPriority.NOT_URGENT_UNIMPORTANT:
         this.priority = "None";
-        this.themeColor = "green";
+        this.themeColor = "limegreen";
         this.listHeader = "Not Urgent & Unimportant";
         break;
       case EisenhowerPriority.NOT_URGENT_IMPORTANT:
@@ -21,7 +21,7 @@ export class PriorityListProperties {
         break;
       case EisenhowerPriority.URGENT_UNIMPORTANT:
         this.priority = "Medium";
-        this.themeColor = "blue";
+        this.themeColor = "dodgerblue";
         this.listHeader = "Urgent & Unimportant";
         break;
       case EisenhowerPriority.URGENT_IMPORTANT:

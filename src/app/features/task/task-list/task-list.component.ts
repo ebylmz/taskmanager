@@ -96,7 +96,7 @@ export class TaskListComponent implements OnInit {
 
   openAddTaskDialog(taskIndex ?: number): void {
     let task: MyTask = taskIndex != undefined ? this.taskList[taskIndex] :
-      {title:"", description: "", priority: this.listProperty.urgency, date: undefined, done: false};
+      {title:"", description: "", priority: this.listProperty?.urgency, date: undefined, done: false};
 
     const dialogRef = this.dialog.open(AddEditTaskDialogComponent, {data: task});
 

@@ -29,6 +29,7 @@ export class ApiService {
       {title: "Make research about museums in Istanbul", priority: EisenhowerPriority.NOT_URGENT_UNIMPORTANT, description: "", date: undefined, done: false},
       {title: "Update the CV", priority: EisenhowerPriority.NOT_URGENT_IMPORTANT, description: "", date: undefined, done: false},
       {title: "Watch Forest Gump", priority: EisenhowerPriority.NOT_URGENT_UNIMPORTANT, description: "", date: undefined, done: false},
+      {title: "Go to university and talk with the professor Fatih Erdogan Sevilgen about the summer project which hasn't been evaluated yet", priority: EisenhowerPriority.NOT_URGENT_UNIMPORTANT, description: "", date: undefined, done: false},
     );
   }
 }

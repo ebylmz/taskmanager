@@ -11,18 +11,18 @@
       <mat-icon class="header-icon">offline_bolt</mat-icon>
       <span>{{listProperty.listHeader}}</span>
     </div>
-    <button mat-icon-button color="primary" (click)="openAddTaskDialog()"><mat-icon>add</mat-icon></button>
+    <button mat-icon-button (click)="openAddTaskDialog()"><mat-icon>add</mat-icon></button>
   </div>
   
   <ng-template #inboxView>
     <div class="list-header-section">
       <h1>{{listHeader}}</h1>
-      <button mat-icon-button color="primary" (click)="openAddTaskDialog()"><mat-icon>add</mat-icon></button>
+      <button mat-icon-button (click)="openAddTaskDialog()"><mat-icon>add</mat-icon></button>
     </div> 
   </ng-template>
 
   <div cdkDrag class="task-box" *ngFor="let task of taskList; let i = index">
-    <mat-checkbox color="primary" (click)="completeTask(i)"></mat-checkbox>
+    <mat-checkbox (click)="completeTask(i)"></mat-checkbox>
     <div 
       class="task-title" 
       (contextmenu)="openContextMenu($event, i)" 
@@ -30,13 +30,7 @@
 
       {{task.title}}
     </div>
-    <mat-icon *ngIf="!matrixView" [ngStyle]="{'color': themes.get(task.priority) }" class="header-icon">offline_bolt</mat-icon>
-    <!--
-    <div>
-      <button mat-icon-button color="primary" (click)="openDialog(i)"><mat-icon>edit</mat-icon></button>
-      <button mat-icon-button color="warn" (click)="deleteTask(i)"><mat-icon>delete</mat-icon></button>
-    </div>
-    -->
+    <mat-icon class="priority-icon" *ngIf="!matrixView" [ngStyle]="{'color': themes.get(task.priority)}">offline_bolt</mat-icon>
   </div>
 </div>
 
