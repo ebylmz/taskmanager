@@ -40,6 +40,13 @@ import { AboutComponent } from './features/settings/about/about.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { LanguageSettingsComponent } from './features/settings/language-settings/language-settings.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+export function httpTranslateLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -83,7 +90,16 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
     MatTooltipModule,
     MatDividerModule,
     MatSlideToggleModule,
-    MatRadioModule
+    MatRadioModule,
+    BrowserModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}},

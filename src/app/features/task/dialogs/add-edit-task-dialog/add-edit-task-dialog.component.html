@@ -6,16 +6,16 @@
   <mat-dialog-content>
     <form [formGroup]="form">
       <mat-form-field appearance="outline">
-        <mat-label>Title</mat-label>
-        <input matInput formControlName="title" placeholder="What needs doing?">
+        <mat-label>{{"task.title" | translate}}</mat-label>
+        <input matInput formControlName="title" placeholder="{{'form.titlePlaceholder' | translate}}">
       </mat-form-field>
       <mat-form-field appearance="outline">
-        <mat-label>Description</mat-label>
-        <input matInput formControlName="description" placeholder="What about the details?">
+        <mat-label>{{"task.description" | translate}}</mat-label>
+        <input matInput formControlName="description" placeholder="{{'form.taskDescriptionPlaceholder' | translate}}">
       </mat-form-field>
       
       <mat-form-field appearance="outline">
-        <mat-label>Due Date</mat-label>
+        <mat-label>{{"task.date" | translate}}</mat-label>
         <input matInput formControlName="date" [matDatepicker]="picker">
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -23,7 +23,7 @@
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label>Priority</mat-label>
+        <mat-label>{{"task.priority" | translate}}</mat-label>
         <mat-select formControlName="priority">
           <mat-select-trigger>
             <mat-icon [ngStyle]="{color: getListProperty(form.get('priority')?.value).themeColor}">offline_bolt</mat-icon>
@@ -31,14 +31,14 @@
 
           <mat-option *ngFor="let type of priorityList" [value]="type.urgency">
             <mat-icon [ngStyle]="{color: type.themeColor}">offline_bolt</mat-icon>
-             {{type.priority}}
+             {{"priority" + "." + type.priority | translate}}
           </mat-option>
         </mat-select>
       </mat-form-field>
     </form>
   </mat-dialog-content>
   <mat-dialog-actions>
-    <button mat-button [disabled]="form.invalid || form.pristine" [mat-dialog-close]="form">Ok</button>
-    <button mat-button color="warn" (click)="onNoClick()" [mat-dialog-close]="undefined">Cancel</button>
+    <button mat-button [disabled]="form.invalid || form.pristine" [mat-dialog-close]="form">{{"common.ok" | translate}}</button>
+    <button mat-button color="warn" (click)="onNoClick()" [mat-dialog-close]="undefined">{{"common.cancel" | translate}}</button>
   </mat-dialog-actions>
 </div>

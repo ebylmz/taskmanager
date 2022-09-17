@@ -1,0 +1,64 @@
+{
+  "common": {
+    "yes": "Evet",
+    "no": "Hayır",
+    "ok": "Tamam",
+    "cancel": "Iptal",
+    "save": "Kaydet",
+    "delete": "Sil",
+    "update": "Güncelle",
+    "login": "Giriş",
+    "logout": "Çıkış"
+  },
+  "languages": {
+    "en": "Ingilizce",
+    "tr": "Türkçe"
+  },
+  "settings": {
+    "account": "Hesap ve Gizlilik",
+    "theme": "Tema",
+    "language": "Dil",
+    "about": "Hakkımızda"
+  },
+  "sidebar": {
+    "settings": "Ayarlar",
+    "matrix": "Eisenhower Matrisi",
+    "tasks": "Görevler"
+  },
+  "user": {
+    "username": "Kullanıcı Adı",
+    "firstName": "Isim",
+    "lastName": "Soy isim",
+    "email": "E-mail",
+    "password": "Şifre"
+  },
+  "form": {
+    "taskTitlePlaceholder": "Ne yapılması gerekiyor?",
+    "taskDescriptionPlaceholder": "Detaylar neler?",
+    "deleteTask": "Bu görevi silmek istediğinden emin misin?"
+  },
+  "task": {
+    "title": "Başlık",
+    "description": "Açıklama",
+    "date": "Tarih",
+    "priority": "Öncelik"
+  },
+  "password": {
+    "requirements": "Şifre en az 1 büyük harf, 1 küçük harf ve 1 rakam içerecek şekilde en az 8 karakterden oluşmalıdır"
+  },
+  "eisenhower": {
+    "notUrgentUnimportant": "Acil Değil & Önemsiz",
+    "notUrgentImportant": "Acil Değil & Önemli",
+    "urgentUnimportant": "Acil & Önemsiz",
+    "urgentImportant": "Acil & Önemli"
+  },
+  "priority": {
+    "high": "Yüksek",
+    "medium": "Orta",
+    "low": "Düşük",
+    "none": "Yok"
+  },
+  "about": {
+    "welcome": "Merhaba, TaskManager'a hoşgeldin."
+  }
+}

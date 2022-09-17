@@ -1,0 +1,64 @@
+{
+  "common": {
+    "yes": "Yes",
+    "no": "No",
+    "ok": "Ok",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "update": "Update",
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "languages": {
+    "en": "English",
+    "tr": "Turkish"
+  },
+  "settings": {
+    "account": "Account and Security",
+    "theme": "Theme",
+    "language": "Language",
+    "about": "About"
+  },
+  "sidebar": {
+    "settings": "Settings",
+    "matrix": "Eisenhower Matrix",
+    "tasks": "Tasks"
+  },
+  "user": {
+    "username": "Username",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "E-mail",
+    "password": "Password"
+  },
+  "form": {
+    "taskTitlePlaceholder": "What needs doing?",
+    "taskDescriptionPlaceholder": "What about the details?",
+    "deleteTask": "Are you sure you want to delete this task?"
+  },
+  "task": {
+    "title": "Title",
+    "description": "Description",
+    "date": "Date",
+    "priority": "Priority"
+  },
+  "password": {
+    "requirements": "Use a password at least 8 characters long with both upper letters, lower letters and numbers"
+  },
+  "eisenhower": {
+    "notUrgentUnimportant": "Not Urgent & Unimportant",
+    "notUrgentImportant": "Not Urgent & Important",
+    "urgentUnimportant": "Urgent & Unimportant",
+    "urgentImportant": "Urgent & Important"
+  },
+  "priority": {
+    "high": "High",
+    "medium": "Medium",
+    "low": "Low",
+    "none": "None"
+  },
+  "about": {
+    "welcome": "Hi, Welcome to TaskManager."
+  }
+}

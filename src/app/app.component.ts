@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'taskmanager-frontend';
+  title = 'taskmanager-frontend'; 
+
+  constructor(public translateService: TranslateService) {
+    translateService.addLangs(["en", "tr"]);
+    translateService.setDefaultLang("en");
+  }
 }

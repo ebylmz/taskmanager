@@ -1,11 +1,17 @@
 <mat-card class="settings-card">
   <mat-card-header>
-    <mat-card-title>Language</mat-card-title>
+    <mat-card-title>{{"settings.language" | translate}}</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <mat-radio-group [(ngModel)]="language" aria-label="Select an option">
-      <mat-radio-button value="en">English</mat-radio-button>
-      <mat-radio-button value="tr">Turkish</mat-radio-button>
-    </mat-radio-group>
+    <mat-form-field appearance="outline">
+      <mat-label>{{"settings.language" | translate}}</mat-label>
+      <mat-select 
+        [(value)]="language"
+        (selectionChange)="translateLanguageTo($event.value)">
+        <mat-option *ngFor="let lang of translateService.getLangs()" [value]="lang">
+          {{"languages" + '.' + lang | translate}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
   </mat-card-content>
 </mat-card>

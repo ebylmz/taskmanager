@@ -9,7 +9,7 @@
   <div *ngIf="matrixView; else inboxView" class="list-header-section" [ngStyle]="{ 'color': listProperty.themeColor }"> 
     <div>
       <mat-icon class="header-icon">offline_bolt</mat-icon>
-      <span>{{listProperty.listHeader}}</span>
+      <span>{{"eisenhower" + "." + listProperty.listHeader | translate}}</span>
     </div>
     <button mat-icon-button (click)="openAddTaskDialog()"><mat-icon>add</mat-icon></button>
   </div>

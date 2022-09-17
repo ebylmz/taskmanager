@@ -1,19 +1,23 @@
 <div class="menu-container">
-  <h1 class="container-header">Settings</h1>
+  <h1 class="container-header"> {{"sidebar.settings" | translate}} </h1>
   <mat-drawer-container class="example-container">
     <mat-drawer mode="side" opened fixedViewports>
       <mat-nav-list>
         <mat-list-item routerLink="account">
-          <mat-icon class="title-icon">admin_panel_settings</mat-icon>Account and Security
+          <mat-icon class="title-icon">admin_panel_settings</mat-icon> 
+          {{"settings.account" | translate}}
         </mat-list-item>
         <mat-list-item routerLink="theme">
-          <mat-icon class="title-icon">palette</mat-icon>Theme 
+          <mat-icon class="title-icon">palette</mat-icon> 
+          {{"settings.theme" | translate}} 
         </mat-list-item>
         <mat-list-item routerLink="language">
-          <mat-icon class="title-icon">language</mat-icon>Language
+          <mat-icon class="title-icon">language</mat-icon> 
+          {{"settings.language" | translate}}
         </mat-list-item>
         <mat-list-item routerLink="about">
-          <mat-icon class="title-icon">info</mat-icon>About
+          <mat-icon class="title-icon">info</mat-icon> 
+          {{"settings.about" | translate}}
         </mat-list-item>
       </mat-nav-list>
     </mat-drawer>

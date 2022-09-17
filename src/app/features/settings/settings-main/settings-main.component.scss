@@ -12,6 +12,10 @@ mat-drawer-container {
   width: 100%;
 }
 
+mat-drawer {
+  min-width: 15rem;
+}
+
 mat-drawer-content {
   height: 90vh;
   display: flex;
