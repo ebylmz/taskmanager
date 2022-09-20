@@ -13,9 +13,8 @@ $light-theme: mat-light-theme((
  )
 ));
 
-// $dark-primary: mat.define-palette(mat.$blue-gray-palette, 200);
 $dark-primary: mat.define-palette(mat.$pink-palette);
-$dark-accent: mat.define-palette(mat.$green-palette);
+$dark-accent: mat.define-palette(mat.$blue-gray-palette);
 $dark-theme: mat-dark-theme((
  color: (
    primary: $dark-primary,

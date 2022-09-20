@@ -11,13 +11,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; 
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { AddEditTaskDialogComponent } from './features/task/dialogs/add-edit-task-dialog/add-edit-task-dialog.component';
 import { MatrixViewComponent } from './features/view/matrix-view/matrix-view.component';
-import { MainComponent } from './features/main/main.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -39,10 +38,14 @@ import { AccountSettingsComponent } from './features/settings/account-settings/a
 import { AboutComponent } from './features/settings/about/about.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { LanguageSettingsComponent } from './features/settings/language-settings/language-settings.component';
-import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './features/page-not-found/page-not-found.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SignInComponent } from './features/login/sign-in/sign-in.component';
+import { SignUpComponent } from './features/login/sign-up/sign-up.component';
+import { TranslateComponent } from './features/login/translate/translate.component';
+import { ThemeToggleComponent } from './features/login/theme-toggle/theme-toggle.component';
 
 export function httpTranslateLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -54,7 +57,6 @@ export function httpTranslateLoaderFactory(http: HttpClient): TranslateHttpLoade
     TaskListComponent,
     AddEditTaskDialogComponent,
     MatrixViewComponent,
-    MainComponent,
     InboxViewComponent,
     DeleteTaskDialogComponent,
     SettingsMainComponent,
@@ -62,7 +64,11 @@ export function httpTranslateLoaderFactory(http: HttpClient): TranslateHttpLoade
     LanguageSettingsComponent,
     AccountSettingsComponent,
     AboutComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SignInComponent,
+    SignUpComponent,
+    TranslateComponent,
+    ThemeToggleComponent
   ],
   imports: [
     BrowserModule,

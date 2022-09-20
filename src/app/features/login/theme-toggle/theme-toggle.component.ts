@@ -6,11 +6,11 @@ const darkMode = "dark_mode";
 const lightMode = "light_mode";
 
 @Component({
-  selector: 'app-theme-settings',
-  templateUrl: './theme-settings.component.html',
-  styleUrls: ['./theme-settings.component.scss']
+  selector: 'app-theme-toggle',
+  templateUrl: './theme-toggle.component.html',
+  styleUrls: ['./theme-toggle.component.scss']
 })
-export class ThemeSettingsComponent implements OnInit {
+export class ThemeToggleComponent implements OnInit {
 
   mode !: string; 
 
@@ -19,17 +19,17 @@ export class ThemeSettingsComponent implements OnInit {
 
   ngOnInit() {
     let theme: string = <string> this.localStorageService.getTheme();
-    this.mode = theme == Theme.LIGHT ? lightMode : darkMode;
+    this.mode = theme == Theme.LIGHT ? darkMode : lightMode;
   }
 
   switchTheme(): void {
     let isDark: boolean = document.body.classList.toggle("dark-theme");
     if (isDark) {
-      this.mode = darkMode;
+      this.mode = lightMode;
       this.localStorageService.setTheme(Theme.DARK);
     }
     else {
-      this.mode = lightMode;
+      this.mode = darkMode;
       this.localStorageService.setTheme(Theme.LIGHT);
     }
   }

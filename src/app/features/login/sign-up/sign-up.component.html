@@ -1,0 +1,55 @@
+<div class="centered-container">
+  <mat-card class="login-card">
+    <div class="toggle-actions">
+      <app-translate></app-translate>
+      <app-theme-toggle></app-theme-toggle>
+    </div>
+    <mat-card-content>
+      <div class="app-image-container">
+        <img class="image" src="../../../../assets/favicons/android-chrome-192x192.png">                
+        <h2>{{"form.signUpWelcome" | translate}}</h2>
+      </div>
+      <form [formGroup]="form" (submit)="onSubmit()">
+        <mat-form-field appearance="outline">
+          <mat-label>{{"user.firstName" | translate}}</mat-label>
+          <input matInput formControlName="firstName">
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline">
+          <mat-label>{{"user.lastName" | translate}}</mat-label>
+          <input matInput formControlName="lastName">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{"user.username" | translate}}</mat-label>
+          <input matInput formControlName="username">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{"user.email" | translate}}</mat-label>
+          <input matInput formControlName="email">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{"user.password" | translate}}</mat-label>
+          <input matInput type="password" formControlName="password">
+          <mat-hint>{{"password.requirements" | translate}}</mat-hint>
+        </mat-form-field>
+        
+        <div *ngIf="signUpFailed" class="login-error">
+          {{"form.signUpFailed" | translate}}
+        </div>
+
+        <mat-card-actions>
+          <button class="action-button" type="submit" mat-button color="primary" [disabled]="form.invalid || form.pristine">
+            {{"form.signUp" | translate}}
+          </button>
+          <div class="centered-text">
+            <span class="already-text">{{"form.alreadySignedUp" | translate}}</span>
+            <a routerLink="/sign-in">{{"form.signIn" | translate}}</a>
+          </div>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -3,11 +3,11 @@ import { TranslateService } from '@ngx-translate/core';
 import { LocalStorageService } from 'src/app/core/services/localStorage.service';
 
 @Component({
-  selector: 'app-language-settings',
-  templateUrl: './language-settings.component.html',
-  styleUrls: ['./language-settings.component.scss']
+  selector: 'app-translate',
+  templateUrl: './translate.component.html',
+  styleUrls: ['./translate.component.scss']
 })
-export class LanguageSettingsComponent implements OnInit {
+export class TranslateComponent implements OnInit {
 
   language !: string;
 

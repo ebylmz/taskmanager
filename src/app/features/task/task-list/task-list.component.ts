@@ -9,6 +9,7 @@ import { AddEditTaskDialogComponent } from '../dialogs/add-edit-task-dialog/add-
 import { FormGroup } from '@angular/forms';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { DeleteTaskDialogComponent } from '../dialogs/delete-task-dialog/delete-task-dialog.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-task-list',
@@ -31,7 +32,7 @@ export class TaskListComponent implements OnInit {
 
   themes !: Map<EisenhowerPriority, String>;
 
-  constructor(private dialog: MatDialog, private snackBar: MatSnackBar) {
+  constructor(private dialog: MatDialog, private translateService: TranslateService, private snackBar: MatSnackBar) {
   }
 
   ngOnInit(): void {
@@ -46,25 +47,33 @@ export class TaskListComponent implements OnInit {
 
   addTask(task: MyTask): void {
     this.taskList.push(task);
-    this.openSnackBar(task.title + " created successfully");
+    this.translateService.get("task.action.created", {"taskTitle": task.title}).subscribe(result => {
+      this.openSnackBar(result);
+    });
   }
 
   editTask(taskIndex: number, updatedTask: MyTask): void {
     let prevTitle: string = this.taskList[taskIndex].title;
     this.taskList[taskIndex] = updatedTask; 
-    this.openSnackBar(prevTitle + " updated successfully");
+    this.translateService.get("task.action.updated", {"taskTitle": prevTitle}).subscribe(result => {
+      this.openSnackBar(result);
+    });
   }
 
   completeTask(taskIndex: number): void {
     this.taskList[taskIndex].done = true;
     let removed: MyTask = this.taskList.splice(taskIndex, 1)[0];
-    this.openSnackBar(removed.title + " completed");
-  }
+    this.translateService.get("task.action.completed", {"taskTitle": removed.title}).subscribe(result => {
+      this.openSnackBar(result);
+    });
+    }
 
   deleteTask(taskIndex: number): void {
     let removed: MyTask = this.taskList.splice(taskIndex, 1)[0];
-    this.openSnackBar(removed.title + " deleted successfully");
-  }
+    this.translateService.get("task.action.deleted", {"taskTitle": removed.title}).subscribe(result => {
+      this.openSnackBar(result);
+    });
+    }
 
   drop(event: CdkDragDrop<MyTask[]>): void {
     if (event.previousContainer === event.container) {

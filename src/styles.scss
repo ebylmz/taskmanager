@@ -19,3 +19,63 @@ body {
     margin-bottom: 3rem;
   }
 }
+
+.form-card {
+  width: 100%;
+  padding: 3rem;
+  border-radius: 0.5rem;
+
+  form {
+    display: grid;
+    grid-column: auto;
+  }
+}
+
+.login-card {
+  min-width: 600px; 
+  border-radius: 0.5rem;
+
+  .toggle-actions {
+    display: flex;
+    justify-content: end;
+  }
+
+  form {
+    display: grid;
+    grid-column: auto;
+  }
+
+  .form-header {
+    margin-bottom: 3rem;
+    width: 100px;    
+    margin: auto;
+  }
+}
+
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.app-image-container {
+  padding-block: 3rem;
+  text-align: center;
+
+  .image {
+    margin-bottom: 2rem;
+  }
+}
+
+.account-image {
+  background-size: cover;
+  background-image: url("//ssl.gstatic.com/accounts/ui/avatar_2x.png");
+}
+
+.login-error {
+  background-color: #FAE5E5;
+  color: red;
+  padding: 1rem;
+}

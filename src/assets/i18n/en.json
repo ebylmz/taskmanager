@@ -7,8 +7,7 @@
     "save": "Save",
     "delete": "Delete",
     "update": "Update",
-    "login": "Login",
-    "logout": "Logout"
+    "signOut": "Sign Out"
   },
   "languages": {
     "en": "English",
@@ -33,6 +32,15 @@
     "password": "Password"
   },
   "form": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signInWelcome": "Sign In to TaskManager",
+    "signUpWelcome": "Sign Up to TaskManager",
+    "notSignedUp": "Don't have an account?",
+    "alreadySignedUp": "Already have an account?",
+    "signInFailed": "Incorrect username or password",
+    "signUpFailed": "User name already exist. Please try with another one",
+    "signUpSuccess": "User registration successful! Please sign in",
     "taskTitlePlaceholder": "What needs doing?",
     "taskDescriptionPlaceholder": "What about the details?",
     "deleteTask": "Are you sure you want to delete this task?"
@@ -41,10 +49,16 @@
     "title": "Title",
     "description": "Description",
     "date": "Date",
-    "priority": "Priority"
+    "priority": "Priority",
+    "action": {
+      "created": "{{taskTitle}} successfully created",
+      "updated": "{{taskTitle}} successfully updated",
+      "completed": "{{taskTitle}} successfully completed",
+      "deleted": "{{taskTitle}} successfully deleted"
+    }
   },
   "password": {
-    "requirements": "Use a password at least 8 characters long with both upper letters, lower letters and numbers"
+    "requirements": "Use a password at least 8 characters long, contains uppercase letters, lowercase letters and numbers"
   },
   "eisenhower": {
     "notUrgentUnimportant": "Not Urgent & Unimportant",
@@ -59,6 +73,10 @@
     "none": "None"
   },
   "about": {
-    "welcome": "Hi, Welcome to TaskManager."
+    "welcome": "Hi, Welcome to TaskManager"
+  },
+  "pageNotFound": {
+    "message": "Page Not Found",
+    "redirect": "Go to Your Inbox" 
   }
 }

@@ -3,15 +3,14 @@
     "yes": "Evet",
     "no": "Hayır",
     "ok": "Tamam",
-    "cancel": "Iptal",
+    "cancel": "İptal",
     "save": "Kaydet",
     "delete": "Sil",
     "update": "Güncelle",
-    "login": "Giriş",
-    "logout": "Çıkış"
+    "signOut": "Çıkış"
   },
   "languages": {
-    "en": "Ingilizce",
+    "en": "İngilizce",
     "tr": "Türkçe"
   },
   "settings": {
@@ -27,12 +26,21 @@
   },
   "user": {
     "username": "Kullanıcı Adı",
-    "firstName": "Isim",
-    "lastName": "Soy isim",
+    "firstName": "İsim",
+    "lastName": "Soy İsim",
     "email": "E-mail",
     "password": "Şifre"
   },
   "form": {
+    "signIn": "Giriş",
+    "signUp": "Kayıt",
+    "signInWelcome": "TaskManager' a Giriş Yap",
+    "signUpWelcome": "TaskManager'a Kayıt Ol",
+    "notSignedUp": "Hesabın yok mu?",
+    "alreadySignedUp": "Hesabın var mı?",
+    "signInFailed": "Hatalı kullanıcı ismi ya da şifre",
+    "signUpFailed": "Bu kullanıcı ismi kullanılmakta. Lütfen başka bir kullanıcı ismi deneyiniz",
+    "signUpSuccess": "Kayıt işlemi başarıyla tamamlandı. Lütfen giriş yapınız",
     "taskTitlePlaceholder": "Ne yapılması gerekiyor?",
     "taskDescriptionPlaceholder": "Detaylar neler?",
     "deleteTask": "Bu görevi silmek istediğinden emin misin?"
@@ -41,15 +49,21 @@
     "title": "Başlık",
     "description": "Açıklama",
     "date": "Tarih",
-    "priority": "Öncelik"
+    "priority": "Öncelik",
+    "action": {
+      "created": "{{taskTitle}} oluşturuldu",
+      "updated": "{{taskTitle}} güncellendi",
+      "completed": "{{taskTitle}} tamamlandı",
+      "deleted": "{{taskTitle}} silindi"
+    }
   },
   "password": {
-    "requirements": "Şifre en az 1 büyük harf, 1 küçük harf ve 1 rakam içerecek şekilde en az 8 karakterden oluşmalıdır"
+    "requirements": "En az 8 karakter uzunluğunda, büyük harf, küçük harf ve rakamlardan oluşan bir şifre kullanın"
   },
   "eisenhower": {
-    "notUrgentUnimportant": "Acil Değil & Önemsiz",
+    "notUrgentUnimportant": "Acil Değil & Önemli Değil",
     "notUrgentImportant": "Acil Değil & Önemli",
-    "urgentUnimportant": "Acil & Önemsiz",
+    "urgentUnimportant": "Acil & Önemli Değil",
     "urgentImportant": "Acil & Önemli"
   },
   "priority": {
@@ -59,6 +73,10 @@
     "none": "Yok"
   },
   "about": {
-    "welcome": "Merhaba, TaskManager'a hoşgeldin."
+    "welcome": "Merhaba, TaskManager'a Hoş geldiniz"
+  },
+  "pageNotFound": {
+    "message": "Aradığınız Sayfa Bulunamadı",
+    "redirect": "Görevlerize Gidin" 
   }
 }

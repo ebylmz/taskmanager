@@ -1,13 +1,41 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { MyTask } from 'src/app/core/models/my-task';
 import { EisenhowerPriority } from '../enums/eisenhower-priority';
+import { User } from '../models/user';
+
+const AUTH_API = 'http://localhost:8080/api/auth/';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  updateUser(user: User): void {
+    
+  }
+
+  signUp(username: string, password: string): Observable<any> {
+    return this.http.post(AUTH_API + "signin", {
+      username, 
+      password
+    }, httpOptions);
+  }
+
+  signIn(username: string, email: string, password: string): Observable<any> {
+    return this.http.post(AUTH_API + "signup", {
+      username, 
+      email,
+      password
+    }, httpOptions);
+  }
 
   getTasks(): MyTask[] {
     return Array.of(
@@ -16,6 +44,7 @@ export class ApiService {
       {title: "Create the API of TaskManager App", priority: EisenhowerPriority.URGENT_IMPORTANT, description: "", date: undefined, done: false},
       {title: "Take a walk", priority: EisenhowerPriority.NOT_URGENT_IMPORTANT, description: "", date: undefined, done: false},
       {title: "Go to grocery", priority: EisenhowerPriority.NOT_URGENT_UNIMPORTANT, description: "", date: undefined, done: false},
+      {title: "Talk with the professor about the summer project which hasn't been evaluated yet", priority: EisenhowerPriority.URGENT_IMPORTANT, description: "", date: undefined, done: false},
       {title: "Sell the shares", priority: EisenhowerPriority.URGENT_IMPORTANT, description: "", date: undefined, done: false},
       {title: "Send mail to MAVI", priority: EisenhowerPriority.URGENT_UNIMPORTANT, description: "", date: undefined, done: false},
       {title: "Apply angular folder structure to TaskManager App", priority: EisenhowerPriority.NOT_URGENT_IMPORTANT, description: "", date: undefined, done: false},
@@ -29,7 +58,6 @@ export class ApiService {
       {title: "Make research about museums in Istanbul", priority: EisenhowerPriority.NOT_URGENT_UNIMPORTANT, description: "", date: undefined, done: false},
       {title: "Update the CV", priority: EisenhowerPriority.NOT_URGENT_IMPORTANT, description: "", date: undefined, done: false},
       {title: "Watch Forest Gump", priority: EisenhowerPriority.NOT_URGENT_UNIMPORTANT, description: "", date: undefined, done: false},
-      {title: "Go to university and talk with the professor Fatih Erdogan Sevilgen about the summer project which hasn't been evaluated yet", priority: EisenhowerPriority.NOT_URGENT_UNIMPORTANT, description: "", date: undefined, done: false},
     );
   }
 }
